@@ -11,7 +11,7 @@ class Node {
     public:
         Node(T new_data, Node<T>* new_next);
         Node(T new_data);
-        Node<T>* getData();
+        T getData();
         Node<T>* getNext();
         void setData(T new_data);
         void setNext(Node<T>* new_next);

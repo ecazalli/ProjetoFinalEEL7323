@@ -2,13 +2,8 @@
 #include "include/LogDatabase.hpp"
 
 
-LogDatabase::LogDatabase() : Queue<logData>() {
+LogDatabase::LogDatabase() : LinkedList<logData>() {
     // Constructor
-    search = nullptr;
-}
-
-LogDatabase::LogDatabase(unsigned long max) : Queue<logData>(max) {
-    // Constructor with maximum size
     search = nullptr;
 }
 
@@ -17,10 +12,14 @@ LogDatabase::~LogDatabase() {
     delete search;
 }
 
+void LogDatabase::AddLog(logData data) {
+    // Add a log to the database
+    append(data);
+}
 std::string* LogDatabase::listEventsBetween(timeDate startDate, timeDate endDate) {
     delete search;
     std::stringstream ss;
-    Node<logData>* current = this->head;
+    Node<logData>* current = this->getHead();
 
     while (current != nullptr) {
         logData currentData = current->getData();
