@@ -1,6 +1,7 @@
 
 
 #include <limits>
+#include "include/Queue.hpp"
 
 template <typename T>
 Queue<T>::Queue() {
@@ -9,6 +10,7 @@ Queue<T>::Queue() {
     max_size = std::numeric_limits<unsigned long>::max(); // max value of unsigned long in time of execution
 }
 
+template <typename T>
 Queue<T>::Queue(unsigned long max){
     head = tail = nullptr;
     size = 0;

@@ -14,8 +14,8 @@ Node<T>::Node(T new_data) {
 }
 
 template <typename T>
-Node<T>* Node<T>::getData() {
-    return *data;
+T Node<T>::getData() {
+    return data;
 }
 
 template <typename T>
